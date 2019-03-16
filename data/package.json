@@ -1,0 +1,14 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "A dataset-generator for my \"linear-regression-thingy\"",
+  "main": "dataset-generator.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "author": "Jonas Karg",
+  "license": "MIT",
+  "dependencies": {
+    "JSONStream": "^1.3.5"
+  }
+}

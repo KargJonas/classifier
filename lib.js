@@ -25,7 +25,7 @@ function train() {
 
     if (improvement > 0) {
       currentWeights = newWeights;
-      console.log({error});
+      console.log(`Error: ${error * 100}%`);
     }
   }
 
@@ -34,9 +34,9 @@ function train() {
 }
 
 function f(x, weights) {
-  let result = weights[0];
+  let result = 0;
 
-  for (let i = 1; i < weights.length; i++) {
+  for (let i = 0; i < weights.length; i++) {
     result += weights[i] * Math.pow(x, i);
   }
 

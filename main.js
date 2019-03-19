@@ -30,6 +30,10 @@ function drawLine() {
   lineCtx.clearRect(0, 0, WIDTH, HEIGHT);
   lineCtx.beginPath();
   lineCtx.moveTo(0, HEIGHT - f(0, currentWeights) * HEIGHT);
-  lineCtx.lineTo(WIDTH, HEIGHT - f(1, currentWeights) * HEIGHT);
+
+  for (let x = 1; x < WIDTH; x++) {
+    lineCtx.lineTo(x, HEIGHT - f(x / WIDTH, currentWeights) * HEIGHT);
+  }
+
   lineCtx.stroke();
 }

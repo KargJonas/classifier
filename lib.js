@@ -5,8 +5,8 @@ let dataset;
 const TWO_PI = Math.PI * 2;
 
 // Our weights
-let currentWeights = [0, 0];
-let learningRate = 0.03;
+let currentWeights = [0, 0, 0, 0, 0, 0, 0, 0];
+let learningRate = 0.1;
 
 fetch("data/dataset-000.json")
   .then(response => response.json())
@@ -34,7 +34,13 @@ function train() {
 }
 
 function f(x, weights) {
-  return weights[0] * x + weights[1];
+  let result = weights[0];
+
+  for (let i = 1; i < weights.length; i++) {
+    result += weights[i] * Math.pow(x, i);
+  }
+
+  return result;
 }
 
 function calculateError(weights) {

@@ -8,7 +8,7 @@ const TWO_PI = Math.PI * 2;
 let currentWeights = [0, 0, 0, 0, 0, 0, 0, 0];
 let learningRate = 0.1;
 
-fetch("data/dataset-000.json")
+fetch("data/dataset-001.json")
   .then(response => response.json())
   .then(response => dataset = response)
   .then(() => calculateError(currentWeights))
